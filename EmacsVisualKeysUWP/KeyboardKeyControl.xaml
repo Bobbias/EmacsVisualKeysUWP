@@ -1,0 +1,42 @@
+﻿<UserControl
+    x:Class="EmacsVisualKeysUWP.KeyboardKeyControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="using:EmacsVisualKeysUWP"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    x:Name="KbdKCtrl"
+    d:DesignHeight="48.538"
+    d:DesignWidth="42.667"
+    RequestedTheme="Dark"
+    mc:Ignorable="d">
+
+    <Grid>
+        <Border
+            Width="auto"
+            Height="auto"
+            Background="{ThemeResource ButtonBackgroundThemeBrush}"
+            BorderBrush="{ThemeResource ButtonBorderThemeBrush}"
+            BorderThickness="1"
+            CornerRadius="6.5">
+            <Button
+                Width="auto"
+                Height="auto"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Stretch"
+                HorizontalContentAlignment="Stretch"
+                VerticalContentAlignment="Stretch"
+                Background="{ThemeResource ButtonBackgroundThemeBrush}"
+                BorderThickness="0"
+                FontSize="18"
+                UseLayoutRounding="False">
+                <Viewbox Stretch="Uniform" StretchDirection="DownOnly">
+                    <ContentControl
+                        x:Name="ContentCtrl"
+                        Content="{Binding AdditionalContent, ElementName=KbdKCtrl, FallbackValue=Fallback}"
+                        Foreground="{ThemeResource TextBoxForegroundThemeBrush}" />
+                </Viewbox>
+            </Button>
+        </Border>
+    </Grid>
+</UserControl>
